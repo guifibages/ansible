@@ -6,3 +6,6 @@
   service: name=nscd state=started
 
 - copy: src=resolv.conf dest=/etc/resolv.conf owner=root group=root mode=0644
+
+- name: motd
+  template: src=motd.j2 dest=/etc/motd
