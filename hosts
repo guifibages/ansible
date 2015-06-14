@@ -1,0 +1,77 @@
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+# Ex 1: Ungrouped hosts, specify before any group headers.
+
+[sllsrv]
+sllproxy  ansible_ssh_host=10.228.12.2  ansible_ssh_user=root
+
+[sllst]
+SLLAjuntamentST1 ansible_ssh_host=10.228.12.1   ansible_ssh_user=ansible
+SLLTorreTelST1   ansible_ssh_host=10.228.16.129 ansible_ssh_user=ansible
+SLLCampanarST1   ansible_ssh_host=10.228.12.97  ansible_ssh_user=ansible
+SLLCampanarST2   ansible_ssh_host=10.228.12.161 ansible_ssh_user=ansible
+
+SLLCornetST1     ansible_ssh_host=10.228.16.1   ansible_ssh_user=ansible
+
+CABCampanarST1   ansible_ssh_host=10.228.19.33  ansible_ssh_user=ansible
+CABDepuradoraST1 ansible_ssh_host=10.228.19.65  ansible_ssh_user=ansible
+
+[sllrd]
+
+
+[srvmn]
+noc          ansible_ssh_host=10.228.17.3  ansible_ssh_user=root
+guifiserver  ansible_ssh_host=10.228.17.4  ansible_ssh_user=root
+airvision    ansible_ssh_host=10.228.17.21 ansible_ssh_user=root
+shell        ansible_ssh_host=10.228.17.22 ansible_ssh_user=root
+aaa          ansible_ssh_host=10.228.17.29 ansible_ssh_user=root
+proxmox      ansible_ssh_host=10.228.17.30 ansible_ssh_user=root
+eurocopter   ansible_ssh_host=10.228.17.32 ansible_ssh_user=root
+dnsmaster    ansible_ssh_host=10.228.17.34 ansible_ssh_user=root
+# webfront     ansible_ssh_host=10.228.17.35 ansible_ssh_user=root
+
+[mnst]
+MNBFST1      ansible_ssh_host=10.228.17.1  ansible_ssh_user=ansible
+
+[mnrd]
+
+# # green.example.com
+# blue.example.com
+# 192.168.100.1
+# 192.168.100.10
+# 
+# # Ex 2: A collection of hosts belonging to the 'webservers' group
+# 
+# [webservers]
+# alpha.example.org
+# beta.example.org
+# 192.168.1.100
+# 192.168.1.110
+# 
+# # If you have multiple hosts following a pattern you can specify
+# # them like this:
+# 
+# www[001:006].example.com
+# 
+# # Ex 3: A collection of database servers in the 'dbservers' group
+# 
+# [dbservers]
+# 
+# db01.intranet.mydomain.net
+# db02.intranet.mydomain.net
+# 10.25.1.56
+# 10.25.1.57
+# 
+# # Here's another example of host ranges, this time there are no
+# # leading 0s:
+# 
+# db-[99:101]-node.example.com
+# 
