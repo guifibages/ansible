@@ -1,0 +1,3 @@
+---
+- name: Ubiquiti Ubuntu repository
+  apt_repository: state=present repo='deb [arch=amd64] http://www.ubnt.com/downloads/airvision/apt precise ubiquiti'

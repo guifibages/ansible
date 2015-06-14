@@ -1,3 +1,6 @@
 - hosts: srvmn
   roles:
   - role: guifibages_server
+- hosts: airvision
+  roles:
+  - role: airvision
