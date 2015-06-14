@@ -1,0 +1,8 @@
+---
+- name: Ensure nscd is installed
+  apt: name=nscd state=present
+
+- name: Ensure nscd is running
+  service: name=nscd state=started
+
+- copy: src=resolv.conf dest=/etc/resolv.conf owner=root group=root mode=0644

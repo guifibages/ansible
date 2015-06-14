@@ -39,7 +39,7 @@ dnsmaster    ansible_ssh_host=10.228.17.34 ansible_ssh_user=root
 # webfront     ansible_ssh_host=10.228.17.35 ansible_ssh_user=root
 
 [mnst]
-MNBFST1      ansible_ssh_host=10.228.17.1  ansible_ssh_user=ansible
+mnbfst1      ansible_ssh_host=10.228.17.1  ansible_ssh_user=ansible ansible_connection=paramiko
 
 [mnrd]
 
