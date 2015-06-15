@@ -1,0 +1,5 @@
+---
+- name: Guifi.net repository
+  apt_repository: state=present repo='deb http://serveis.guifi.net/debian  guifi/'
+
+- include: proxy.yml

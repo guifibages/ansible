@@ -1,0 +1,7 @@
+---
+- name: Install guifi-proxy
+  apt: name=guifi-proxy3 state=present
+
+- name: Configure guifi-proxy
+  template: src=proxy3.config.sh.j2 dest=/etc/guifi-proxy3/config.sh
+  notify: rewrite squid config

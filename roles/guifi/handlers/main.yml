@@ -1,0 +1,7 @@
+---
+- name: rewrite squid config
+  command: /usr/share/guifi-proxy3/guifi-proxy3.sh
+  notify: check squid
+
+- name: check squid
+  command: /usr/share/guifi-proxy3/check_squid.sh
