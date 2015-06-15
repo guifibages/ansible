@@ -11,7 +11,7 @@
 # Ex 1: Ungrouped hosts, specify before any group headers.
 
 [sllsrv]
-sllproxy  ansible_ssh_host=10.228.12.2  ansible_ssh_user=root
+sllajuntament  ansible_ssh_host=10.228.12.2  ansible_ssh_user=root guifi_node=31050 guifi_snpid=52442 guifi_rootZone=25672
 
 [sllst]
 SLLAjuntamentST1 ansible_ssh_host=10.228.12.1   ansible_ssh_user=ansible
@@ -29,7 +29,7 @@ CABDepuradoraST1 ansible_ssh_host=10.228.19.65  ansible_ssh_user=ansible
 
 [srvmn]
 noc          ansible_ssh_host=10.228.17.3  ansible_ssh_user=root
-guifiserver  ansible_ssh_host=10.228.17.4  ansible_ssh_user=root
+guifiserver  ansible_ssh_host=10.228.17.4  ansible_ssh_user=root guifi_node=21908 guifi_dnsid=21909 guifi_snpid=20960 guifi_rootZone=3671
 airvision    ansible_ssh_host=10.228.17.21 ansible_ssh_user=root
 shell        ansible_ssh_host=10.228.17.22 ansible_ssh_user=root
 aaa          ansible_ssh_host=10.228.17.29 ansible_ssh_user=root

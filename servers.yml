@@ -1,6 +1,11 @@
-- hosts: srvmn
+- hosts: [ "mnsrv", "sllsrv" ]
   roles:
   - role: guifibages_server
+
 - hosts: airvision
   roles:
   - role: airvision
+
+- hosts: sllajuntament
+  roles:
+  - role: guifi
