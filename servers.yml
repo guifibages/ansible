@@ -6,6 +6,6 @@
   roles:
   - role: airvision
 
-- hosts: sllajuntament
+- hosts: [sllajuntament, guifiserver]
   roles:
   - role: guifi
