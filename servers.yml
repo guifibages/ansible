@@ -1,4 +1,4 @@
-- hosts: [ "mnsrv", "sllsrv" ]
+- hosts: srv
   roles:
   - role: guifibages_server
 

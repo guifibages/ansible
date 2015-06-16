@@ -1,11 +1,36 @@
 ---
-- name: Ensure nscd is installed
-  apt: name=nscd state=present
+- name: Common packages
+  apt: name={{item}} state=present
+  with_items:
+    - rsyslog
+    - vim
+    - less
+    - iputils-ping
+    - screen
+    - sudo
+    - libnss-ldap
+    - libpam-ldap
+    - ca-certificates
+    - cpio
+    - bash-completion
+    - traceroute
+    - fail2ban
+    - nscd
 
 - name: Ensure nscd is running
   service: name=nscd state=started
 
-- copy: src=resolv.conf dest=/etc/resolv.conf owner=root group=root mode=0644
+- name: Common files
+  copy: src={{item}} dest=/{{item}} owner=root group=root mode=0644
+  with_items:
+    - etc/resolv.conf
+    - etc/nsswitch.conf
+    - etc/ldap/ldap.conf
+    - etc/profile.d/guifibages.sh
 
-- name: motd
-  template: src=motd.j2 dest=/etc/motd
+- name: Common templated files
+  template: src={{item}}.j2 dest=/etc/{{item}}
+  with_items:
+    - motd
+    - pam_ldap.conf
+    - libnss-ldap.conf

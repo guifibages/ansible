@@ -1,0 +1,17 @@
+base {{pam_ldap.base}}
+uri {{pam_ldap.uri}}
+ldap_version {{pam_ldap.ldap_version}}
+binddn {{pam_ldap.binddn}}
+bindpw {{pam_ldap.bindpw}}
+
+ssl on
+sslpath /etc/ssl/certs
+tls_checkpeer no
+nss_schema rfc2307bis
+nss_base_passwd ou=Users,ou=auth,dc=guifibages,dc=net?one?memberOf=cn=ldapAdmin,ou=Groups,ou=auth,dc=guifibages,dc=net
+nss_base_shadow ou=Users,ou=auth,dc=guifibages,dc=net
+nss_base_group          ou=Groups,ou=auth,dc=guifibages,dc=net
+nss_base_hosts          ou=Hosts,ou=net,dc=guifibages,dc=net
+nss_map_attribute       rfc2307attribute        mapped_attribute
+nss_map_objectclass     rfc2307objectclass      mapped_objectclass
+nss_map_attribute uniqueMember member
