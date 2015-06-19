@@ -26,6 +26,7 @@
     - etc/resolv.conf
     - etc/nsswitch.conf
     - etc/ldap/ldap.conf
+    - etc/pam.d/common-session
     - etc/profile.d/guifibages.sh
 
 - name: Common templated files
