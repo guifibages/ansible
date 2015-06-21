@@ -29,6 +29,9 @@
     - etc/pam.d/common-session
     - etc/profile.d/guifibages.sh
 
+- name: Remove /etc/motd.tail
+  file: path=/etc/motd.tail state=absent
+
 - name: Common templated files
   template: src={{item}}.j2 dest=/etc/{{item}}
   with_items:
