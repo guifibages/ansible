@@ -5,3 +5,6 @@
 
 - name: check squid
   command: /usr/share/guifi-proxy3/check_squid.sh
+
+- name: Update CA certificates
+  command: /usr/sbin/update-ca-certificates

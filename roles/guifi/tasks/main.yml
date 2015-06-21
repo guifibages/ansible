@@ -2,4 +2,13 @@
 - name: Guifi.net repository
   apt_repository: state=present repo='deb http://serveis.guifi.net/debian  guifi/'
 
+- name: Ensure /usr/local/share/ca-certificates exists
+  file: path=/usr/local/share/ca-certificates state=directory mode=0755 owner=root group=root
+
+- name: Install trusted certificates
+  copy: src={{item}} dest=/usr/local/share/ca-certificates/{{item}} owner=root group=root mode=0644
+  with_items:
+    - ldap.guifi.net.crt
+  notify: Update CA certificates
+
 - include: proxy.yml
