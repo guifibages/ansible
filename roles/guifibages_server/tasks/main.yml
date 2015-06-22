@@ -38,3 +38,10 @@
     - motd
     - pam_ldap.conf
     - libnss-ldap.conf
+
+- name: Set some kernel parameters
+  lineinfile:
+    dest: /etc/sysctl.conf
+    regexp: "^{{ item.key }}"
+    line: "{{ item.key }} = {{ item.value }}"
+  with_items: sysctl
