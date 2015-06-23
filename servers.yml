@@ -9,3 +9,7 @@
 - hosts: [sllajuntament, guifiserver]
   roles:
   - role: guifi
+
+- hosts: eurocopter
+  roles:
+  - role: guifibages_docker
