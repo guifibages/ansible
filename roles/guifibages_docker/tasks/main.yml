@@ -1,0 +1,12 @@
+---
+- name: ensure docker-py is present
+  pip: name=docker-py
+- name: docker containers
+  docker:
+    name: "{{item.name}}"
+    image: "{{item.image}}"
+    ports: "{{item.ports}}"
+    state: running
+    volumes: "{{item.volumes}}"
+  with_items: docker_containers
+  when: docker_containers is defined
