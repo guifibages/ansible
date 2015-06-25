@@ -10,6 +10,7 @@
     links: "{{item.links}}"
     state: started
     volumes: "{{item.volumes}}"
+    command: "{{item.command}}"
   when: docker_containers is defined
   with_items: docker_containers
   tags: docker

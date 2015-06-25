@@ -10,5 +10,7 @@ lxc_containers:
 - shell01
 
 docker_containers:
-- { name: elastic , image: "elasticsearch:1.6" , links: [],  ports: ["9200:9200", "9300:9300"], volumes: "/guifibages/docker/elastic:/usr/share/elasticsearch/data" }
-- { name: kibana , image: "kibana",  links: ["elastic:elasticsearch"], ports: ["5601:5601"], volumes: []}
+- { name: elastic , image: "elasticsearch:1.6" , links: [],  ports: ["9200:9200", "9300:9300"], volumes: "/guifibages/docker/elastic:/usr/share/elasticsearch/data", command: "" }
+- { name: kibana , image: "kibana",  links: ["elastic:elasticsearch"], ports: ["5601:5601"], volumes: [], command: "" }
+- { name: redis , image: "redis",  links: [], ports: [], volumes: ["/guifibages/docker/redis:/data"], command: "redis-server --appendonly yes" }
+# - { name: logstash , image: "logstash",  links: ["elastic:elasticsearch"], ports: ["1065:1065"], volumes: ["/guifibages/docker/logstash:/data", "/var/log:/logs"], command: "logstash -f /data/logstash.conf" }
